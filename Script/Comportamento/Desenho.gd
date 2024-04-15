@@ -2,7 +2,7 @@ class_name DESENHO
 extends Node2D
 
 var angulo:float = 0.0
-var largura:float = 200
+var largura:float = 50
 var colunas:int
 var linhas:int
 var curvas:Array
@@ -74,6 +74,8 @@ func iniciar_cabecario() -> void:
 			
 			curvas[x][0].iniciar_eixo_x_e_eixo_y(centroEixoX1 + eixoX1, centroEixoY1 + eixoY1)
 			curvas[0][y].iniciar_eixo_x_e_eixo_y(centroEixoX2 + eixoX2, centroEixoY2 + eixoY2)
+			get_child(get_children().find(curvas[0][0].ponto) -1).hide()
+			
 	
 func iniciar_tabela() -> void:
 	for x in range(colunas):
